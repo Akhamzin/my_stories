@@ -7,8 +7,27 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<header class = "navbar navbar-default navbar-fixed-top">
+	<nav>
+		<div class = "container">
+			<ul class = "nav nav-pills pull-right">
+				<li><%= link_to "Домой", root_path %></li>
+			</ul>
+		</div>
+	</nav>
+</header>
 
-<%= yield %>
+<div class = "navbar navbar-default navbar-fixed-bottom">
+	<div class = "container">
+		<ul class = "nav nav-pills pull-right">
+			<li><%= link_to "Обо мне", about_path %></li>
+		</ul>
+	</div>
+</div>
+
+<div class = "container">
+	<%= yield %>
+</div>
 
 </body>
 </html>
