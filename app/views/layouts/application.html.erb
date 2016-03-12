@@ -11,6 +11,15 @@
 	<nav>
 		<div class = "container">
 			<ul class = "nav nav-pills pull-right">
+				<% if user_signed_in? %>
+					<li>
+						<p><%= current_user.email %></p>
+					</li>
+					<li><%= link_to 'Выйти', destroy_user_session_path, :method => :delete %></li>
+				<% else %>
+					<li><%= link_to 'Войти', new_user_session_path %></li>
+					<li><%= link_to 'Зарегистрироваться', new_user_registration_path %></li>
+				<% end %>
 				<li><%= link_to "Домой", root_path %></li>
 			</ul>
 		</div>
