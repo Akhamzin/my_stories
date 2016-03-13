@@ -13,7 +13,7 @@
 			<ul class = "nav nav-pills pull-right">
 				<% if user_signed_in? %>
 					<li>
-						<p><%= current_user.email %></p>
+						<p><%= link_to current_user.email, user_root_path %></p>
 					</li>
 					<li><%= link_to 'Выйти', destroy_user_session_path, :method => :delete %></li>
 				<% else %>
